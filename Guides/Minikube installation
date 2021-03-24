@@ -1,0 +1,34 @@
+# **Minikube guide**
+
+## *Avantages*
+- Minikube est un programme destiné à effectuer des tests de déploiement en local dans le but de simulé des actions pouvant être faites sur un cluster K8s
+- C'est une version simplifiée de Kubernetes qui simulera un Node (1 Master et 1 Worker Node regroupés), nécessitant peu de ressources physiques
+- Cela permet d'apprendre les commandes de bases de Kubernetes (kubectl CLI) et de se familiariser avec les prémisses des Kubernetes
+- Conteneur Docker pré-installé (similaire à K8s)
+
+## *Désavantages*
+
+- Il n'est pas possible de tester l'interaction entre plusieurs Node avec MiniKube car le programme virtualise un seul Node de test pour rester le plus léger possible. 
+
+### Installation 
+
+https://minikube.sigs.k8s.io/docs/start/
+
+### Commandes basiques minikube/kubectl
+
+- Pour lancer un cluster : **minikube start**
+  
+- Pour accéder au dashboard : **minikube dashboard**
+  
+- Crée un nouveau déploiement : **kubectl create deployment [nom] --[image]**
+  
+- Exposer un service sur un NodePort : **kubectl expose deployment [nom] --type=NodePort --port=[xxxx]**
+  
+- Ouvrir un tunnel vers un service : **minikube service [nom]**
+  
+- Mettre à jour la version du cluster : **minikube start --kubernetes-version=latest**
+
+- Arrêter le cluster : **minikube stop**
+
+- Supprimer un cluster : **minikube delete**
+
