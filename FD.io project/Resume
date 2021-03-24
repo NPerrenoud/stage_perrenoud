@@ -1,0 +1,37 @@
+# Docker
+- Un logiciel permettant de lancer des applications dans des conteneurs logiciels
+- un conteneur Docker n'inclut pas de système d'exploitation, mais s'appuie sur les fonctionnalités du système d’exploitation fournies par la machine hôte
+
+# Kubernetes (K8s)
+- Un software qui permet d'automatiser le déploiement, la montée en charge et la mise en œuvre de conteneurs d'application sur des clusters de serveurs 
+- Il utilise différentes technologies des conteneurisations et de virtualisation pour fonctionner, dont docker (avec lequel il est souvent associé)
+- Un système d'orchestration de conteneurs
+
+# Contiv/VPP 
+- Plugin pour Kubernetes
+- Les conteneurs sont appelés des PODS
+- Le but du plugin est d'offrir une connectivité agile entre les PODS en utilisant la technologie VPP
+
+## VPP
+- Vector Packet Processing est une plateforme offrant les fonctionnalités de switches ou de routeurs dans un Network
+- Il a pour but de remplacer l'approche "scalar processing". VPP sert à traiter plusieurs traitements de transfert de packet à la fois avec une latence basse
+- Permet de connecter les différents nodes d'un cluster entre eux efficacement et de s'optimiser en apprenant un meilleur routing à chaque packet de manière recursive ??
+- Fonctionne Node par Node ??
+- Permet d'établir des relations sophistiquées de type "node to node"
+- VPP fait partie du Fast Data Project (FD.io) 
+
+# Ligato 
+- Fait office de control plane lors de l'utilisation de CNF
+
+*La méthode adéquate pour gérer des CNF est l'utilisation du framework Ligato faisant office de control plane accouplé
+à l'utilisation de FD/VPP comme data plane (Linux)*
+
+*Cela offre un bon controle des conteneurs orchestrés par K8s*
+
+## Sources 
+- https://fd.io/overview/fdiousecases/
+- https://ligato.io/cnf/cnf-def/
+- https://fd.io/docs/vpp/master/usecases/contiv/k8s_overview
+- https://ligato.io/blog/cnf-ligato-fdio/
+- https://www.youtube.com/channel/UCIJ2OP6_i1npoHM39kxvwyg
+- https://fd.io/vppproject/vpptech/
